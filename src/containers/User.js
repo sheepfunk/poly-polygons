@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import UserInput from '../components/UserInput'
+import TextForm from '../components/TextForm'
 import Welcome from '../components/Welcome'
 
 const mapStateToProps = (state) => {
@@ -13,7 +13,15 @@ const User = React.createClass({
   render: function () {
     let user = this.props.user 
     return <div class="user">
-    	{ user ? <Welcome user={user} /> : <UserInput /> }
+    	{ 
+    		user ? <Welcome user={user} /> : 
+      	<div>
+      		<div> 
+        		Tell me who you are 
+      		</div>
+    			<TextForm action={'ADD_USER'}/>
+    		</div> 
+    	}
   	</div>
   }
 })

@@ -19,5 +19,18 @@ describe("Reducer Test", () => {
 		expect(result).to.eql(expectedState)
 	})
 
+	it("should add a category", () => {
+		let initialState = Map({
+			user: 'Skye'
+		})
+		let expectedState = Map({
+			user: 'Skye',
+			categories: Map({
+				'Love': 0
+			})
+		})
+		let result = categories(initialState, {type:'ADD_CATEGORY', category:'Love'})
+		expect(result).to.eql(expectedState)
+	})
 
 })

@@ -1,19 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-const UserInput = React.createClass({
+const TextForm = React.createClass({
   onSubmit: function(e) {
     e.preventDefault()
     this.props.dispatch({
-      type: 'ADD_USER',
+      type: this.props.action,
       user: this.refs.input.value
     })
   },
   render: function () {
     return <div class='user_input_form'>
-      <div> 
-        Tell me who you are 
-      </div>
       <form onSubmit = { this.onSubmit } >
         <input ref="input" />
         <input type="submit" />
@@ -22,4 +19,6 @@ const UserInput = React.createClass({
   }
 })
 
-export default connect()(UserInput)
+export default connect()(TextForm)
+
+
