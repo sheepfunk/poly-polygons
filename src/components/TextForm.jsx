@@ -6,7 +6,7 @@ const TextForm = React.createClass({
     e.preventDefault()
     this.props.dispatch({
       type: this.props.action,
-      user: this.refs.input.value
+      value: this.refs.input.value
     })
   },
   render: function () {

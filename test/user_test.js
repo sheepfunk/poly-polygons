@@ -10,7 +10,7 @@ describe("User Test", () => {
       user: 'Skye'
     })
     
-		let result = categories(INITIAL_STATE, {type:'ADD_USER', user:'Skye'})
+		let result = categories(INITIAL_STATE, {type:'ADD_USER', value:'Skye'})
 		expect(result).to.eql(expectedState)
 	})
 

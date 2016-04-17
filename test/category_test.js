@@ -14,7 +14,7 @@ describe("Category Test", () => {
 				'Love': 0
 			})
 		})
-		let result = categories(initialState, {type:'ADD_CATEGORY', category:'Love'})
+		let result = categories(initialState, {type:'ADD_CATEGORY', value:'Love'})
 		expect(result).to.eql(expectedState)
 	})
 
@@ -32,7 +32,7 @@ describe("Category Test", () => {
 				'Communication': 0
 			})
 		})
-		let result = categories(initialState, {type:'ADD_CATEGORY', category:'Communication'})
+		let result = categories(initialState, {type:'ADD_CATEGORY', value:'Communication'})
 		expect(result).to.eql(expectedState)
 		expect(initialState).to.eql(Map({
 			user: 'Skye',
