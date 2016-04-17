@@ -1,5 +1,9 @@
+var webpack = require('webpack');
+
 module.exports = {
   entry: [
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
     './index.jsx'
   ],
   output: {
@@ -8,8 +12,12 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
+    hot: true
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
   query: {
     presets: ['es2015', 'react']
   },
@@ -17,7 +25,7 @@ module.exports = {
     loaders: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      loader: 'babel'
+      loader: 'react-hot!babel'
     }]
   },
   resolve: {
