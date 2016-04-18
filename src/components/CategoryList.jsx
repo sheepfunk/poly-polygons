@@ -1,18 +1,17 @@
 import React from 'react'
+import CategoryInput from './CategoryInput'
 
 const CategoryList = React.createClass({
-	renderCategories: function () {
-		let renderedKeys = []		
-		let categories = this.props.categories
-		if (categories != undefined) {
-			renderedKeys = Object.keys(categories.toJS()).map(key => {
-				return "<div>" + key + ":" + categories.get(key)  + "</div>"
-			})
-		}
-		return { '__html' : renderedKeys.join(' ') }
-	},
   render: function () {
-    return <div class="category_list" dangerouslySetInnerHTML={ this.renderCategories() } /> 
+  	let categories = this.props.categories ? this.props.categories.toJS() : []
+    return <div class="category_list">
+    	<div> On a scale of 1 to 100 how would you rate this quality in your relationship </div>
+    	{ 
+    		Object.keys(categories).map(key => { 
+    			return <CategoryInput name={ key } value={ categories['key'] } />
+    		})
+    	}
+    </div> 
   }
 })
 

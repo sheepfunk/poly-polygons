@@ -42,6 +42,28 @@ describe("Category Test", () => {
 		}))
 	})
 
+	it("should rate a category", () => {
+		let initialState = Map({
+			user: 'Skye',
+			categories: Map({
+				'Love': 0
+			})
+		})
+		let expectedState = Map({
+			user: 'Skye',
+			categories: Map({
+				'Love': 90
+			})
+		})
+		let result = categories(initialState, { type:'RATE_CATEGORY', name:'Love', value:90 })
+		expect(result).to.eql(Map({
+			user: 'Skye',
+			categories: Map({
+				'Love': 90
+			})
+		}))
+	})
+
 
 })	
 
