@@ -64,6 +64,27 @@ describe("Category Test", () => {
 		}))
 	})
 
+	it("should stop adding categories", () => {
+		let initialState = Map({
+			user: 'Skye',
+			categories: Map({
+				'Love': 90,
+				'Communication': 80,
+				'Fun' : 100
+			})
+		})
+	  let expectedState = Map({
+			user: 'Skye',
+			categories: Map({
+				'Love': 90,
+				'Communication': 80,
+				'Fun' : 100
+			}),
+			categories_finished: true
+		})
+		let result = categories(initialState, {type:'FINISH_CATEGORIES', value: true})
+		expect(result).to.eql(expectedState)
+	})
 
 })	
 
