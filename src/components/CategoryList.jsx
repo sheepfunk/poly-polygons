@@ -7,8 +7,8 @@ const CategoryList = React.createClass({
     return <div class="category_list">
     	<div> On a scale of 1 to 100 how would you rate this quality in your relationship </div>
     	{ 
-    		Object.keys(categories).map(key => { 
-    			return <CategoryInput name={ key } value={ categories['key'] } />
+    		Object.keys(categories).map(name => { 
+    			return <CategoryInput name={ name } value={ categories[name] } key={ Math.random() } />
     		})
     	}
     </div> 

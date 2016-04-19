@@ -11,12 +11,16 @@ const CategoryInput = React.createClass({
     })
   },
   render: function () {
-    return <div class='category_rating_form'>
-      <form onSubmit = { this.onSubmit } >
-        <label> { this.props.name } </label>
-        <input type="number" name={ this.props.name } ref="input" />
-        <input type="submit" />
-      </form>
+    return <div class='category_rating_form' >
+      {
+        this.props.value == undefined || this.props.value == 0 ? 
+        <form onSubmit = { this.onSubmit } >
+          <label> { this.props.name } </label>
+          <input type="number"  name={ this.props.name } ref="input" />
+          <input type="submit" />
+        </form>
+        : this.props.name + ' - ' + this.props.value 
+      }
     </div>
   }
 })
