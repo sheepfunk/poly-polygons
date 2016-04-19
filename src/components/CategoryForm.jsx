@@ -3,7 +3,7 @@ import TextForm from '../components/TextForm'
 
 const CategoryForm = React.createClass({
   render: function () {
-    return <div class="CategoryForm">      
+    return <div className="CategoryForm">      
   		<div> 
     		What is important in your relationship
   		</div>

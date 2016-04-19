@@ -10,7 +10,7 @@ const TextForm = React.createClass({
     })
   },
   render: function () {
-    return <div class='user_input_form'>
+    return <div className='user_input_form'>
       <form onSubmit = { this.onSubmit } >
         <input ref="input" />
         <input type="submit" />

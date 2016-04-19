@@ -10,7 +10,7 @@ const FinishCategories = React.createClass({
     })
   },
   render: function () {
-    return <div class='finish_categories_form' >
+    return <div className='finish_categories_form' >
       {
         <form onSubmit = { this.onSubmit } >
           <label> Done Adding Categories </label>

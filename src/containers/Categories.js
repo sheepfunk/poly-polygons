@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import CategoryForm from '../components/CategoryForm'
 import CategoryList from '../components/CategoryList'
 import FinishCategories from '../components/FinishCategories'
+import Star from '../components/Star'
 
 const mapStateToProps = (state) => {
   return {
@@ -24,6 +25,11 @@ const Categories = React.createClass({
           <CategoryList categories={categories} />
           <FinishCategories /> 
         </div> 
+      } 
+      {
+        user && finished && <div>
+          <Star categories={categories} />
+        </div>
       }
     </div>
   }

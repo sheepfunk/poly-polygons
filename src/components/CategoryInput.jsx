@@ -11,7 +11,7 @@ const CategoryInput = React.createClass({
     })
   },
   render: function () {
-    return <div class='category_rating_form' >
+    return <div className='category_rating_form' >
       {
         this.props.value == undefined || this.props.value == 0 ? 
         <form onSubmit = { this.onSubmit } >
