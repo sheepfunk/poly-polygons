@@ -5,9 +5,14 @@ const Star = React.createClass({
 	getRotation: function(size, counter) {
 		return (360 / size) * counter
 	},
+	getSmallest: function(){
+		let categories 	= this.props.categories.toJS()
+		let vals 				= Object.keys(categories).map(key => categories[key])
+		return Math.min.apply(Math, vals)
+	},
   render: function () {
-    let categories = this.props.categories
-    let counter = 0 
+    let categories 	= this.props.categories
+    let counter 		= 0 
     return <div className="star">
     	<h4> Here is what your poly star looks like </h4>
     	<div className="polygon_container">
@@ -19,7 +24,8 @@ const Star = React.createClass({
 	    				rotation={ this.getRotation(categories.size, counter) } 
 	    				length={ categories.get(c) }
 	    				point={ idx } 
-	    				key={ Math.random() } /> 
+	    				key={ Math.random() } 
+	    				smallest_length={ this.getSmallest() } /> 
 	    		})
 	    	}
     	</div>
@@ -28,18 +34,3 @@ const Star = React.createClass({
 })
 
 export default Star
-
-/*
-
-Algorithm 
-
-- 1 triangle for each category
-- border bottom of each triangle = category.value
-- each subsequent triangle should be rotated x degrees
-	where x = # of categories / 360
-- each triangle should be moved to 
-
-
-
-
-*/

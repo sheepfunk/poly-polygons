@@ -13,6 +13,7 @@ body {
 	display: table;
 	margin: 0 auto;
 	position: relative;
+	top: 400px;
 }
 
 #triangle {
