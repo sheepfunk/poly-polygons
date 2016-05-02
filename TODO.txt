@@ -1,0 +1,10 @@
+TODO
+
+1. Create a back end server, (probably node.js)
+2. Save data to a file or something
+3. Remember users, develop a better login system
+4. Style it better
+5. Make a way for users to be associated with other users
+6. Add some error handling for all the submissions
+7. Convert the category inputs to sliders
+8. Change the npm start so it doesn't use the dev server

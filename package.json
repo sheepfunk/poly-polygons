@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.jsx",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive"
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive",
+    "start": "webpack-dev-server"
   },
   "keywords": [],
   "author": "",
