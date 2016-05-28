@@ -25,7 +25,9 @@ const Triangle = React.createClass({
   },
 
   getStyle: function(length, rotation, smallest){
-    let movement = this.getMovement(length, rotation, smallest)
+    // Set minimum length
+    length        = length + 100
+    let movement  = this.getMovement(length, rotation, smallest)
     return {
       borderBottom:     length + 'px solid red',
       webkitTransform:  'rotate(' + rotation + 'deg)',
